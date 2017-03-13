@@ -27,10 +27,10 @@ print "---------------------------------------------"
 print ""
 print "---------------------------------------------"
 print "Please make sure you have the available info:"
-print "            Twitter consumer Key             "
-print "        Twitter consumer secret Key          "
-print "         Your Twitter accesstoken            "
-print "      And your Twitter accesstokensecret     "
+print "            Twitter Consumer Key             "
+print "        Twitter Consumer Secret Key          "
+print "         Your Twitter Access Token           "
+print "       your Twitter Access Token Secret      "
 print "---------------------------------------------"
 print ""
 print "---------------------------------------------"
@@ -44,23 +44,27 @@ os.system("pause")
 # We clear the screen again
 clear()
 
-# Let's then request the different Twitter API keys required to run the experiment
+# The next step is to validate whethere keys.txt file exists.
+# keys.txt is the file where we will store the Twitter Credentials.
 
-consumerkey = raw_input("Enter your Consumer Key: ")
-consumersecret = raw_input("Enter your Consumer Secret Key: ")
-accesstoken = raw_input("Enter your Access Token: ")
-accesstokensecret = raw_input("Enter your Access Token Secret Key: ")
+credentials = open("keys.txt", "r")
+filesize = os.path.getsize("keys.txt")
+credentials.close()
 
-# The next step is to create a file to store the Twitter key.
-
-credentials = open("keys.txt", "w")
-credentials(len)
-
-if credentials(len) == 0:
-    credentials.write(consumerkey,)
-    credentials.write(consumersecret,)
-    credentials.write(accesstoken,)
-    credentials.write(accesstokensecret,)
+if filesize = "0":
+    credentials = open("keys.txt", "r")
+    consumerkey = raw_input("Enter your Consumer Key: ")
+    consumerkey = str(consumerkey)
+    credentials.write(consumerkey)
+    consumersecret = raw_input("Enter your Consumer Secret Key: ")
+    consumersecret = str(consumersecret)
+    credentials.write(consumersecret)
+    accesstoken = raw_input("Enter your Access Token: ")
+    accesstoken = str(accesstoken)
+    credentials.write(accesstoken)
+    accesstokensecret = raw_input("Enter your Access Token Secret Key: ")
+    accesstokensecret = str(accesstokensecret)
+    credentials.write(accesstokensecret)
     credentials.close()
 else:
     credentials = open("keys.txt", "r")
