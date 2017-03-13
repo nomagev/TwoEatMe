@@ -5,9 +5,10 @@
 
 # -*- coding: utf-8 -*-
 
-# Import tweepy library.
 # Check https://github.com/nomagev/nomagev-twtt/blob/master/README.md
 # for pre-requisits to run this code.
+
+# Import tweepy library.
 # We will also import the os library, to do some os related operations while running the code.
 import tweepy
 import os
@@ -38,47 +39,59 @@ print "     Once you have all of those details,     "
 print "       Please press a key to continue:       "
 print "---------------------------------------------"
 
-# Pause the Program
-os.system("pause")
+os.system("pause") # Pause the Program
 
-# We clear the screen again
-clear()
+clear() # We clear the screen again
 
-# The next step is to validate whethere keys.txt file exists.
-# keys.txt is the file where we will store the Twitter Credentials.
+# Next step: validate whether keys.txt file exists.
+# keys.txt: file where Twitter Credentials will be stored.
+# Why do that?, program can be distributed without the keys in it.
 
-credentials = open("keys.txt", "r")
-filesize = os.path.getsize("keys.txt")
-credentials.close()
+fileexists = os.path.exists("keys.txt")
 
-if filesize = "0":
-    credentials = open("keys.txt", "r")
+# We then create a decision-making tree based on keys.txt existing or not.
+
+if fileexists is False: # If Keys.txt does not exists, create it and store values.
+    credentials = open("keys.txt", "w")
     consumerkey = raw_input("Enter your Consumer Key: ")
-    consumerkey = str(consumerkey)
+    consumerkey = str(consumerkey) + '\n'
     credentials.write(consumerkey)
     consumersecret = raw_input("Enter your Consumer Secret Key: ")
-    consumersecret = str(consumersecret)
+    consumersecret = str(consumersecret) + '\n'
     credentials.write(consumersecret)
     accesstoken = raw_input("Enter your Access Token: ")
-    accesstoken = str(accesstoken)
+    accesstoken = str(accesstoken) + '\n'
     credentials.write(accesstoken)
     accesstokensecret = raw_input("Enter your Access Token Secret Key: ")
-    accesstokensecret = str(accesstokensecret)
+    accesstokensecret = str(accesstokensecret) + '\n'
     credentials.write(accesstokensecret)
     credentials.close()
+
 else:
-    credentials = open("keys.txt", "r")
-    print credentials.readline(0)
-    print credentials.readline(1)
-    print credentials.readline(2)
-    print credentials.readline(3)
+    keylist = [] # Let's create a list to store the values contained in keys.txt
+    credentials = open("keys.txt", "r") # Open keys.txt in Read Mode and
+    for line in credentials: # run a loop into the content of the file
+        keylist.append(line) # add each value into keys.txt into the keylist
+    consumerkey = str(keylist[0]) # assign 1st value in list to this variable
+    consumersecret = str(keylist[1]) # assign 2nd value in list to this variable
+    accesstoken = str(keylist[2]) # assign 3rd value in list to this variable
+    accesstokensecret = str(keylist[3]) # assign 4th value in list to this variable
+    credentials.close() # Close the file (it's no longer needed)
+
+# For the purpose of testing, I will display the content of the variables
+
+print consumerkey
+print consumersecret
+print accesstoken
+print accesstokensecret
 
 # Let's then request the different Twitter API keys required to run the code
-authentication = tweepy.OAuthHandler(consumerkey, consumersecret)
-authentication.set_access_token(accesstoken, accesstokensecret)
 
-twitteraccess = tweepy.API(authentication)
+#authentication = tweepy.OAuthHandler(consumerkey, consumersecret)
+#authentication.set_access_token(accesstoken, accesstokensecret)
 
-public_tweets = twitteraccess.home_timeline()
-for tweet in public_tweets:
-    print tweet.text
+#twitteraccess = tweepy.API(authentication)
+
+#public_tweets = twitteraccess.home_timeline()
+#for tweet in public_tweets:
+#    print tweet.text
