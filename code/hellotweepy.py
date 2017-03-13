@@ -20,10 +20,12 @@ clear()
 # Let's display a first disclaimer
 # We indicate the required things needed to execute the program
 print "---------------------------------------------"
-print "            This is a first test             "
-print "   You need to use your own API credentials  "
-print "    Please visit https://apps.twitter.com    "
-print "to create an App and gain the related details"
+print "                 2017-03-13                  "
+print "           Code is not completed             "
+print "       Store Twitter keys is now ready       "
+# print "   You need to use your own API credentials  "
+# print "    Please visit https://apps.twitter.com    "
+# print "to create an App and gain the related details"
 print "---------------------------------------------"
 print ""
 print "---------------------------------------------"
@@ -43,15 +45,25 @@ os.system("pause") # Pause the Program
 
 clear() # We clear the screen again
 
+# I want to identify the name of the file: it may be useful for users.
+filename =  os.path.basename(__file__)
+
 # Next step: validate whether keys.txt file exists.
-# keys.txt: file where Twitter Credentials will be stored.
-# Why do that?, program can be distributed without the keys in it.
+# keys.txt is the file where Twitter Credentials will be stored.
+# Why do that? So program can be distributed without the keys in it.
 
 fileexists = os.path.exists("keys.txt")
 
 # We then create a decision-making tree based on keys.txt existing or not.
 
 if fileexists is False: # If Keys.txt does not exists, create it and store values.
+    print "It seems you have no keys stored"
+    print "We are going to store your Twitter Keys, so you do no have to worry about it anymore"
+    print "We will store those keys into a file called keys.txt in the directory where your program is"
+    print "If you share this program, DO NOT share keys.txt with anyone: only the", filename, "file"
+    os.system("pause") # Pause the Program
+    print "Let's go then"
+    print ""
     credentials = open("keys.txt", "w")
     consumerkey = raw_input("Enter your Consumer Key: ")
     consumerkey = str(consumerkey) + '\n'
@@ -71,19 +83,21 @@ else:
     keylist = [] # Let's create a list to store the values contained in keys.txt
     credentials = open("keys.txt", "r") # Open keys.txt in Read Mode and
     for line in credentials: # run a loop into the content of the file
-        keylist.append(line) # add each value into keys.txt into the keylist
-    consumerkey = str(keylist[0]) # assign 1st value in list to this variable
-    consumersecret = str(keylist[1]) # assign 2nd value in list to this variable
-    accesstoken = str(keylist[2]) # assign 3rd value in list to this variable
-    accesstokensecret = str(keylist[3]) # assign 4th value in list to this variable
+        keylist.append(line) # add each value stored @ keys.txt into the keylist
+    consumerkey = str(keylist[0]) # assign 1st value in keylist to this variable
+    consumersecret = str(keylist[1]) # assign 2nd value in keylist to this variable
+    accesstoken = str(keylist[2]) # assign 3rd value in keylist to this variable
+    accesstokensecret = str(keylist[3]) # assign 4th value in keylist to this variable
     credentials.close() # Close the file (it's no longer needed)
 
-# For the purpose of testing, I will display the content of the variables
+# For testing purposes, I display the content of the variables
 
-print consumerkey
-print consumersecret
-print accesstoken
-print accesstokensecret
+print "For testing purposes, I display the content of the variables"
+print ""
+print "The Stored Consumer Key is ", consumerkey
+print "The Stored Consumer Secret is ", consumersecret
+print "The Stored Access Token is ", accesstoken
+print "The Stored Access Token Secret is ", accesstokensecret
 
 # Let's then request the different Twitter API keys required to run the code
 
