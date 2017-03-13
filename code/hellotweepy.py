@@ -8,11 +8,26 @@
 # Check https://github.com/nomagev/nomagev-twtt/blob/master/README.md
 # for pre-requisits to run this code.
 
-# Import tweepy library.
-# We will also import the os library, to do some os related operations while running the code.
-import tweepy
+# We will start importing the os library.
+# This will allow os related operations.
 import os
 
+# We will then try to Import tweepy library.
+# This will allow Twitter API related operations.
+# We will try to call it: if missing, program stops.
+
+try:
+    import tweepy
+except ImportError:
+    print "--------------------------------------------"
+    print " Tweepy library is missing on your system!  "
+    print " Install it by using the following command: "
+    print "             pip install tweepy             "
+    print "Note:Use Admin Rights may be needed to do so"
+    print "--------------------------------------------"
+    os.abort()
+
+# We will try to call it: if missing, program stops.
 # Let's first clean the screen running a cls instruction
 clear = lambda: os.system('cls')
 clear()
@@ -23,23 +38,23 @@ print "---------------------------------------------"
 print "                 2017-03-13                  "
 print "           Code is not completed             "
 print "       Store Twitter keys is now ready       "
-# print "   You need to use your own API credentials  "
-# print "    Please visit https://apps.twitter.com    "
-# print "to create an App and gain the related details"
+#print "   You need to use your own API credentials  "
+#print "    Please visit https://apps.twitter.com    "
+#print "to create an App and gain the related details"
 print "---------------------------------------------"
-print ""
-print "---------------------------------------------"
-print "Please make sure you have the available info:"
-print "            Twitter Consumer Key             "
-print "        Twitter Consumer Secret Key          "
-print "         Your Twitter Access Token           "
-print "       your Twitter Access Token Secret      "
-print "---------------------------------------------"
-print ""
-print "---------------------------------------------"
-print "     Once you have all of those details,     "
-print "       Please press a key to continue:       "
-print "---------------------------------------------"
+#print ""
+#print "---------------------------------------------"
+#print "Please make sure you have the available info:"
+#print "            Twitter Consumer Key             "
+#print "        Twitter Consumer Secret Key          "
+#print "         Your Twitter Access Token           "
+#print "       your Twitter Access Token Secret      "
+#print "---------------------------------------------"
+#print ""
+#print "---------------------------------------------"
+#print "     Once you have all of those details,     "
+#print "       Please press a key to continue:       "
+#print "---------------------------------------------"
 
 os.system("pause") # Pause the Program
 
