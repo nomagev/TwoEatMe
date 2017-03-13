@@ -35,10 +35,13 @@ clear()
 # Let's display a first disclaimer
 # We indicate the required things needed to execute the program
 print "---------------------------------------------"
-print "|                 2017-03-13                |"
-print "|          Code is not completed            |"
+print "|                 Public Log                |"
+print "|                 ----------                |"
+print "|              Date: 2017-03-14             |"
+print "|          Code is not completed yet        |"
 print "|        Code is Windows Ready Only         |"
 print "|     Storing Twitter keys is now ready     |"
+print "|Working on tweepy code to make it work now |"
 #print "|  You need to use your own API credentials |"
 #print "|   Please visit https://apps.twitter.com   |"
 #print "| to create an App & gain required details  |"
