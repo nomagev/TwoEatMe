@@ -43,7 +43,7 @@ print "|     Storing Twitter keys is now ready     |"
 #print "|   Please visit https://apps.twitter.com   |"
 #print "| to create an App & gain required details  |"
 print "---------------------------------------------"
-#print ""
+print ""
 #print "---------------------------------------------"
 #print "|      To use this tool, we will need:      |"
 #print "|           - Twitter Consumer Key          |"
@@ -74,7 +74,7 @@ fileexists = os.path.exists("keys.txt")
 
 if fileexists is False: # If Keys.txt does not exists, create it and store values.
     print "-------------------------------------------------"
-    print "|     It seems you have no keys stored....      |"
+    print "|     It seems you have no keys stored...       |"
     print "|We are going to write & store your Twitter Keys|"
     print "| so you do no have to worry about it anymore.  |"
     print "-------------------------------------------------"
@@ -90,10 +90,11 @@ if fileexists is False: # If Keys.txt does not exists, create it and store value
     print "|                  PLEASE NOTE:                 |"
     print "|      If you share this program, remember:     |"
     print "|       DO NOT share keys.txt with anyone!      |"
-    print "| You only need to share the", filename, "file  |"
+    print "| You only need to share the", filename, "file|"
     print "-------------------------------------------------"
     print ""
     os.system("pause") # Pause the Program
+    print ""
     print "Let's go then"
     print ""
     credentials = open("keys.txt", "w")
