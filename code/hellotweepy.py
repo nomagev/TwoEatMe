@@ -1,20 +1,21 @@
-# The following is an extract from "Hello Tweepy" example
+# The following code is based on a "Hello Tweepy" example
 # provided by https://github.com/tweepy/tweepy repository
-# (see https://github.com/tweepy/tweepy/blob/master/docs/getting_started.rst)
-# for full reference
+# for full reference, please check the following url:
+# https://github.com/tweepy/tweepy/blob/master/docs/getting_started.rst)
 
 # -*- coding: utf-8 -*-
 
 # Check https://github.com/nomagev/nomagev-twtt/blob/master/README.md
 # for pre-requisits to run this code.
 
-# We will start importing the os library.
-# This will allow os related operations.
-import os
+# We will start importing the os and sys libraries.
 
-# We will then try to Import tweepy library.
-# This will allow Twitter API related operations.
-# We will try to call it: if missing, program stops.
+import os, sys
+
+# from __future__ import absolute_import, print_function
+
+# We now try to Import tweepy library to work with Twitter
+# If library is missing in python, program will stop.
 
 try:
     import tweepy
@@ -27,9 +28,20 @@ except ImportError:
     print "--------------------------------------------"
     os.abort()
 
+if sys.platform == "linux" or sys.platform == "linux2":
+    clear = lambda: os.system('clear')
+    pause = lambda: os.system('read -p "$*"')
+elif sys.platform == "darwin":
+    clear = lambda: os.system('clear')
+    pause = lambda: os.system('read -p "$*"')
+elif sys.platform == "win32":
+    clear = lambda: os.system('cls')
+    pause = lambda: os.system("pause")
+
+
 # We will try to call it: if missing, program stops.
 # Let's first clean the screen running a cls instruction
-clear = lambda: os.system('cls')
+
 clear()
 
 # Let's display a first disclaimer
@@ -60,7 +72,7 @@ print ""
 #print "|      Please press a key to continue:      |"
 #print "---------------------------------------------"
 
-os.system("pause") # Pause the Program
+pause() # Pause the Program
 
 clear() # We clear the screen again
 
@@ -96,7 +108,7 @@ if fileexists is False: # If Keys.txt does not exists, create it and store value
     print "| You only need to share the", filename, "file|"
     print "-------------------------------------------------"
     print ""
-    os.system("pause") # Pause the Program
+    pause() # Pause the Program
     print ""
     print "Let's go then"
     print ""
@@ -134,7 +146,8 @@ print "The Stored Consumer Key is", consumer_key
 print "The Stored Consumer Secret is", consumer_secret
 print "The Stored Access Token is", access_token
 print "The Stored Access Token Secret is", access_token_secret
-
+print ""
+print ""
 # Let's then request the different Twitter API keys required to run the code
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -142,6 +155,6 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-public_tweets = api.home_timeline()
-for tweet in public_tweets:
-    print tweet.text
+# If the authentication was successful, you should
+# see the name of the account print out
+print(api.me().name)
