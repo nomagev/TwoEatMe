@@ -86,7 +86,7 @@ if fileexists is False: # If Keys.txt does not exists, create it and store value
     print "|      We will store those keys into a file.    |"
     print "|    This file will be called 'keys.txt' and    |"
     print "|  it will be located into the directory where  |"
-    print "|            you copied this program.           |"
+    print "|           you copied this program...          |"
     print "-------------------------------------------------"
     print ""
     print "-------------------------------------------------"
