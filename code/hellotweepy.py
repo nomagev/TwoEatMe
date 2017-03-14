@@ -67,12 +67,15 @@ clear() # We clear the screen again
 # I want to identify the name of the file: it may be useful for users.
 filename =  os.path.basename(__file__)
 
-# Next steidate whether keys-for-tweepyile exists.
-# keystweepy.txt is the fi   Onlyentials    Only# Why do that   ? So program ca   n be distributed without the keys in it.
+# Next step: validate whether keys.txt file exists.
+# keys.txt is the file where Twitter Credentials will be stored.
+# Why do that? So program can be distributed without the keys in it.
 
-fileexist.path.exists("keys-for-tweepy.txt")
+fileexists = os.path.exists("keys.txt")
 
-# We then e a decision-mtree based on keys-for-tweepy.txt existing or nif fileexs False: # If Keys-fo   Onlyxisreate it and store values   .
+# We then create a decision-making tree based on keys.txt existing or not.
+
+if fileexists is False: # If Keys.txt does not exists, create it and store values.
     print "-------------------------------------------------"
     print "|     It seems you have no keys stored...       |"
     print "|We are going to write & store your Twitter Keys|"
@@ -81,25 +84,25 @@ fileexist.path.exists("keys-for-tweepy.txt")
     print ""
     print "-------------------------------------------------"
     print "|      We will store those keys into a file.    |"
-    print "| This file be called 'keys-for-tweepy.txt' and |"
-    print "|    it will appear into the directory where    |"
+    print "|    This file will be called 'keys.txt' and    |"
+    print "|  it will be located into the directory where  |"
     print "|           you copied this program...          |"
     print "-------------------------------------------------"
     print ""
     print "-------------------------------------------------"
     print "|                  PLEASE NOTE:                 |"
     print "|      If you share this program, remember:     |"
-    print "| DO NOT share keys-for-tweepy.txt with anyone! |"
-    print "|    Only share the", filename, "file    |"
+    print "|       DO NOT share keys.txt with anyone!      |"
+    print "| You only need to share the", filename, "file|"
     print "-------------------------------------------------"
     print ""
     os.system("pause") # Pause the Program
     print ""
     print "Let's go then"
     print ""
-    tials = open("keys-for-tweepy.txt", "w")
-    cor_key =   Onlyr your Consumer Key: ")
-       consumer_key = str(consumer_key) + '\n'
+    credentials = open("keys.txt", "w")
+    consumer_key = raw_input("Enter your Consumer Key: ")
+    consumer_key = str(consumer_key) + '\n'
     credentials.write(consumer_key)
     consumer_secret = raw_input("Enter your Consumer Secret Key: ")
     consumer_secret = str(consumer_secret) + '\n'
@@ -113,9 +116,11 @@ fileexist.path.exists("keys-for-tweepy.txt")
     credentials.close()
 
 else:
-    keylist = [] # Let's create a list to store the  contained in keys-for-tweepy.txt
-    tials = okeys-for-tweep, "r") # Open keys-weepy.txt in Read Mode    for line in credentials: # run a l   Onlytent of the file
-   Onlyappe   nd(   Only stored @ keys   -for-tweepy.tx   t into the keyl   consumer_key = str(keylist[0]) #   Onlye in keylist to this variabl   e
+    keylist = [] # Let's create a list to store the values contained in keys.txt
+    credentials = open("keys.txt", "r") # Open keys.txt in Read Mode and
+    for line in credentials: # run a loop into the content of the file
+        keylist.append(line) # add each value stored @ keys.txt into the keylist
+    consumer_key = str(keylist[0]) # assign 1st value in keylist to this variable
     consumer_secret = str(keylist[1]) # assign 2nd value in keylist to this variable
     access_token = str(keylist[2]) # assign 3rd value in keylist to this variable
     access_token_secret = str(keylist[3]) # assign 4th value in keylist to this variable
