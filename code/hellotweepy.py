@@ -154,7 +154,5 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
-
-# If the authentication was successful, you should
-# see the name of the account print out
-print(api.me().name)
+user = api.me()
+print user
