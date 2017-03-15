@@ -1,21 +1,8 @@
-# The following code is based on a "Hello Tweepy" example
-# provided by https://github.com/tweepy/tweepy repository
-# for full reference, please check the following url:
-# https://github.com/tweepy/tweepy/blob/master/docs/getting_started.rst)
+import os, sys
 
 # -*- coding: utf-8 -*-
 
-# Check https://github.com/nomagev/nomagev-twtt/blob/master/README.md
-# for pre-requisits to run this code.
-
-# We will start importing the os and sys libraries.
-
-import os, sys
-
 # from __future__ import absolute_import, print_function
-
-# We now try to Import tweepy library to work with Twitter
-# If library is missing in python, program will stop.
 
 try:
     import tweepy
@@ -38,54 +25,43 @@ elif sys.platform == "win32":
     clear = lambda: os.system('cls')
     pause = lambda: os.system("pause")
 
-
-# We will try to call it: if missing, program stops.
-# Let's first clean the screen running a cls instruction
-
 clear()
 
-# Let's display a first disclaimer
-# We indicate the required things needed to execute the program
 print "---------------------------------------------"
 print "|                 Public Log                |"
 print "|                 ----------                |"
-print "|              Date: 2017-03-14             |"
+print "|              Date: 2017-03-15             |"
 print "|          Code is not completed yet        |"
-print "|        Code is Windows Ready Only         |"
+print "|   Code is Windows, OSX and Linux Ready    |"
 print "|     Storing Twitter keys is now ready     |"
-print "|Working on tweepy code to make it work now |"
-#print "|  You need to use your own API credentials |"
-#print "|   Please visit https://apps.twitter.com   |"
-#print "| to create an App & gain required details  |"
+print "| When bringing keys back, although working |"
+print "|somehow values are not being recognized by |"
+print "|  the tweepy credentials part of the code  |"
 print "---------------------------------------------"
-print ""
-#print "---------------------------------------------"
-#print "|      To use this tool, we will need:      |"
-#print "|           - Twitter Consumer Key          |"
-#print "|       - Twitter Consumer Secret Key       |"
-#print "|          - Twitter Access Token           |"
-#print "|        - Twitter Access Token Secret      |"
-#print "---------------------------------------------"
-#print ""
-#print "---------------------------------------------"
-#print "|    Once you have all of those details,    |"
-#print "|      Please press a key to continue:      |"
-#print "---------------------------------------------"
 
-pause() # Pause the Program
+pause()
+clear()
 
-clear() # We clear the screen again
+print "---------------------------------------------"
+print "|  You need to use your own API credentials |"
+print "|   Please visit https://apps.twitter.com   |"
+print "| to create an App & gain required details: |"
+print "|                                           |"
+print "|           - Twitter Consumer Key          |"
+print "|       - Twitter Consumer Secret Key       |"
+print "|          - Twitter Access Token           |"
+print "|        - Twitter Access Token Secret      |"
+print "|                                           |"
+print "|    Once you have all of those details,    |"
+print "|      Please press a key to continue:      |"
+print "---------------------------------------------"
 
-# I want to identify the name of the file: it may be useful for users.
-filename =  os.path.basename(__file__)
+pause()
+clear()
 
-# Next step: validate whether keys.txt file exists.
-# keys.txt is the file where Twitter Credentials will be stored.
-# Why do that? So program can be distributed without the keys in it.
+filename =  os.path.basename(__file__) # Identify the name of the file
 
-fileexists = os.path.exists("keys.txt")
-
-# We then create a decision-making tree based on keys.txt existing or not.
+fileexists = os.path.exists("keys-DO-NOT-COMMIT.txt") # Check if keys file exists.
 
 if fileexists is False: # If Keys.txt does not exists, create it and store values.
     print "-------------------------------------------------"
@@ -108,11 +84,11 @@ if fileexists is False: # If Keys.txt does not exists, create it and store value
     print "| You only need to share the", filename, "file|"
     print "-------------------------------------------------"
     print ""
-    pause() # Pause the Program
+    pause()
     print ""
     print "Let's go then"
     print ""
-    credentials = open("keys.txt", "w")
+    credentials = open("keys-DO-NOT-COMMIT.txt", "w")
     consumer_key = raw_input("Enter your Consumer Key: ")
     consumer_key = str(consumer_key) + '\n'
     credentials.write(consumer_key)
@@ -129,7 +105,7 @@ if fileexists is False: # If Keys.txt does not exists, create it and store value
 
 else:
     keylist = [] # Let's create a list to store the values contained in keys.txt
-    credentials = open("keys.txt", "r") # Open keys.txt in Read Mode and
+    credentials = open("keys-DO-NOT-COMMIT.txt", "r") # Open keys.txt in Read Mode and
     for line in credentials: # run a loop into the content of the file
         keylist.append(line) # add each value stored @ keys.txt into the keylist
     consumer_key = str(keylist[0]) # assign 1st value in keylist to this variable
@@ -138,16 +114,6 @@ else:
     access_token_secret = str(keylist[3]) # assign 4th value in keylist to this variable
     credentials.close() # Close the file (it's no longer needed)
 
-# For testing purposes, I display the content of the variables
-
-print "For testing purposes, I display the content of the variables"
-print ""
-print "The Stored Consumer Key is", consumer_key
-print "The Stored Consumer Secret is", consumer_secret
-print "The Stored Access Token is", access_token
-print "The Stored Access Token Secret is", access_token_secret
-print ""
-print ""
 # Let's then request the different Twitter API keys required to run the code
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)

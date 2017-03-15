@@ -1,9 +1,12 @@
 import tweepy
 
-# Put credentials here
-# Check credentials-DO-NOT-COMMIT.txt
+# Credentials here: # Check credentials-DO-NOT-COMMIT.txt
+consumer_key = 
+consumer_secret = 
+access_token = 
+access_token_secret = 
+# Credentials here: # Check credentials-DO-NOT-COMMIT.txt
 
-#---------------------------------
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
