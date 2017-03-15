@@ -22,4 +22,4 @@ To run this code, you may need to have installed in your computer or have availa
     - Twitter Consumer Key
     - Twitter Consumer Secret Key
     - Twitter Access Token
-    - Twitter Access Token Secret      |"
+    - Twitter Access Token Secret
