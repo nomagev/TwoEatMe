@@ -1,4 +1,5 @@
 import os
+import sys
 import pickle
 
 # pylint: disable=C0103
@@ -44,7 +45,7 @@ print "---------------------------------------------"
 pause()
 clear()
 
-filename =  os.path.basename(__file__) # Identify the name of the file
+filename =  os.path.basename(__file__)
 
 fileexists = os.path.exists("keys-DO-NOT-COMMIT.txt")
 
@@ -95,5 +96,5 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
-user = api.me()
+user = api.me().name
 print user
