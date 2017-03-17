@@ -1,8 +1,8 @@
-import os, sys
+import os
+import pickle
 
+# pylint: disable=C0103
 # -*- coding: utf-8 -*-
-
-# from __future__ import absolute_import, print_function
 
 try:
     import tweepy
@@ -28,21 +28,6 @@ elif sys.platform == "win32":
 clear()
 
 print "---------------------------------------------"
-print "|                 Public Log                |"
-print "|                 ----------                |"
-print "|              Date: 2017-03-15             |"
-print "|          Code is not completed yet        |"
-print "|   Code is Windows, OSX and Linux Ready    |"
-print "|     Storing Twitter keys is now ready     |"
-print "| When bringing keys back, although working |"
-print "|somehow values are not being recognized by |"
-print "|  the tweepy credentials part of the code  |"
-print "---------------------------------------------"
-
-pause()
-clear()
-
-print "---------------------------------------------"
 print "|  You need to use your own API credentials |"
 print "|   Please visit https://apps.twitter.com   |"
 print "| to create an App & gain required details: |"
@@ -61,9 +46,9 @@ clear()
 
 filename =  os.path.basename(__file__) # Identify the name of the file
 
-fileexists = os.path.exists("keys-DO-NOT-COMMIT.txt") # Check if keys file exists.
+fileexists = os.path.exists("keys-DO-NOT-COMMIT.txt")
 
-if fileexists is False: # If Keys.txt does not exists, create it and store values.
+if fileexists is False:
     print "-------------------------------------------------"
     print "|     It seems you have no keys stored...       |"
     print "|We are going to write & store your Twitter Keys|"
@@ -88,31 +73,21 @@ if fileexists is False: # If Keys.txt does not exists, create it and store value
     print ""
     print "Let's go then"
     print ""
-    credentials = open("keys-DO-NOT-COMMIT.txt", "w")
     consumer_key = raw_input("Enter your Consumer Key: ")
-    consumer_key = str(consumer_key) + '\n'
-    credentials.write(consumer_key)
     consumer_secret = raw_input("Enter your Consumer Secret Key: ")
-    consumer_secret = str(consumer_secret) + '\n'
-    credentials.write(consumer_secret)
     access_token = raw_input("Enter your Access Token: ")
-    access_token = str(access_token) + '\n'
-    credentials.write(access_token)
     access_token_secret = raw_input("Enter your Access Token Secret Key: ")
-    access_token_secret = str(access_token_secret) + '\n'
-    credentials.write(access_token_secret)
-    credentials.close()
+    keylist = [consumer_key, consumer_secret, access_token, access_token_secret]
+    with open('keys-DO-NOT-COMMIT.txt', "wb") as keyloader:
+        pickle.dump(keylist, keyloader)
 
 else:
-    keylist = [] # Let's create a list to store the values contained in keys.txt
-    credentials = open("keys-DO-NOT-COMMIT.txt", "r") # Open keys.txt in Read Mode and
-    for line in credentials: # run a loop into the content of the file
-        keylist.append(line) # add each value stored @ keys.txt into the keylist
-    consumer_key = str(keylist[0]) # assign 1st value in keylist to this variable
-    consumer_secret = str(keylist[1]) # assign 2nd value in keylist to this variable
-    access_token = str(keylist[2]) # assign 3rd value in keylist to this variable
-    access_token_secret = str(keylist[3]) # assign 4th value in keylist to this variable
-    credentials.close() # Close the file (it's no longer needed)
+    with open('keys-DO-NOT-COMMIT.txt', "rb") as keyloader:
+        keylist = pickle.load(keyloader)
+        consumer_key = keylist[0]
+        consumer_secret = keylist[1]
+        access_token = keylist[2]
+        access_token_secret = keylist[3]
 
 # Let's then request the different Twitter API keys required to run the code
 
