@@ -6,6 +6,16 @@ import tweepy
 # pylint: disable=C0103
 # -*- coding: utf-8 -*-
 
+if sys.platform == "linux" or sys.platform == "linux2":
+    clear = lambda: os.system('clear')
+    pause = lambda: os.system('read -p "$*"')
+elif sys.platform == "darwin":
+    clear = lambda: os.system('clear')
+    pause = lambda: os.system('read -p "$*"')
+elif sys.platform == "win32":
+    clear = lambda: os.system('cls')
+    pause = lambda: os.system("pause")
+
 clear()
 
 filename = os.path.basename(__file__)
@@ -36,54 +46,57 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # This ones work for yourself, but they give a
-# lot of info, so it's better to keep them off 
+# lot of info, so it's better to keep them off
 # until we find the # way to work with them.
-
 # print(api.me())
 # print(api.me().status)
 
-print(api.me().contributors_enabled)
-print(api.me().created_at)
-print(api.me().default_profile)
-print(api.me().default_profile_image)
-print(api.me().description)
-print(api.me().entities)
-print(api.me().favourites_count)
-print(api.me().followers_count)
-print(api.me().following)
-print(api.me().friends_count)
-print(api.me().geo_enabled)
-print(api.me().has_extended_profile)
-print(api.me().id)
-print(api.me().id_str)
-print(api.me().lang)
-print(api.me().listed_count)
-print(api.me().location)
-print(api.me().name)
-print(api.me().needs_phone_verification)
-print(api.me().notifications)
-print(api.me().profile_background_color)
-print(api.me().profile_background_image_url)
-print(api.me().profile_background_image_url_https)
-print(api.me().profile_background_tile)
-print(api.me().profile_banner_url)
-print(api.me().profile_image_url)
-print(api.me().profile_image_url_https)
-print(api.me().profile_link_color)
-print(api.me().profile_location)
-print(api.me().profile_sidebar_border_color)
-print(api.me().profile_sidebar_fill_color)
-print(api.me().profile_text_color)
-print(api.me().profile_use_background_image)
-print(api.me().protected)
-print(api.me().screen_name)
-print(api.me().statuses_count)
-print(api.me().suspended)
-print(api.me().time_zone)
-print(api.me().translator_type)
-print(api.me().url)
-print(api.me().utc_offset)
-print(api.me().verified)
+
+# These ones retrieve specific data-points from
+# the selected user
+
+print "Account has Contributors Enabled:", api.me().contributors_enabled
+print "Account Creation Date:", api.me().created_at
+print "Account Uses Default Profile:", api.me().default_profile
+print "Account Uses Default Profile Image:", api.me().default_profile_image
+print "Account Personal Description:", api.me().description
+print "Account Entities:", api.me().entities
+print "Account # of Twitts favoured:", api.me().favourites_count
+print "Account # of Followers:", api.me().followers_count
+print "Account is following:", api.me().following
+print "Account # of Friends:", api.me().friends_count
+print "Account is Geo-enabled:", api.me().geo_enabled
+print "Account has extended profile:", api.me().has_extended_profile
+print "Account Raw Id:", api.me().id
+print "Account Raw Id (Legacy):", api.me().id_str
+print "Account Set Language:", api.me().lang
+print "Account Listed Count:", api.me().listed_count
+print "Account User Location:", api.me().location
+print "Account User Name:", api.me().name
+print "Account Needs Phone Verification:", api.me().needs_phone_verification
+print "Account has notifications enabled:", api.me().notifications
+print "Account Profile Background Color:", api.me().profile_background_color
+print "Account Profile Background Image URL:", api.me().profile_background_image_url
+print "Account Profile Background Image URL (https):", api.me().profile_background_image_url_https
+print "Account Profile Uses Background Tile:", api.me().profile_background_tile
+print "Account Profile Banner Image URL:", api.me().profile_banner_url
+print "Account Profile Image URL:", api.me().profile_image_url
+print "Account Profile Image URL (https):", api.me().profile_image_url_https
+print "Account Profile Link Color:", api.me().profile_link_color
+print "Account Profile Location:", api.me().profile_location
+print "Account Profile Sidebar Border Color:", api.me().profile_sidebar_border_color
+print "Account Profile Sidebar Fill Color:", api.me().profile_sidebar_fill_color
+print "Account Profile Text Color:", api.me().profile_text_color
+print "Account Profile Used Background Image:", api.me().profile_use_background_image
+print "Account is Protected:", api.me().protected
+print "Account Screen Name:", api.me().screen_name
+print "Account # of Published Twitts:", api.me().statuses_count
+print "Account is suspended:", api.me().suspended
+print "Account Time Zone:", api.me().time_zone
+print "Account uses Translator Type:", api.me().translator_type
+print "Account Profile has a URL:", api.me().url
+print "Account UTC Offset (in Seconds):", api.me().utc_offset
+print "Account is verified:", api.me().verified
 
 # AttributeError: 'User' object has no attribute 'hashtags'
 #----------------------------------
