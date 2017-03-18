@@ -137,32 +137,14 @@ aboutme()
 print "-------------------------------------"
 currentstatus()
 
-# AttributeError: 'User' object has no attribute 'hashtags'
 #----------------------------------
-# print api.me().coordinates)
-# print api.me()._json)
-# print api.me().favorite_count)
-# print api.me().favorited)
-# print api.me().geo)
-# print api.me().hashtags)
-# print api.me().in_reply_to_screen_name)
-# print api.me().in_reply_to_status_id)
-# print api.me().in_reply_to_status_id_str)
-# print api.me().in_reply_to_user_id)
-# print api.me().in_reply_to_user_id_str)
-# print api.me().indices)
-# print api.me().is_quote_status)
-# print api.me().is_translation_enabled)
-# print api.me().is_translator)
-# print api.me().place)
-#print api.me().retweet_count)
-#print api.me().retweeted)
-# print api.me().source)
-# print api.me().source_url)
-# print api.me().text)
-# print api.me().truncated)
-# print api.me().urls)
-# print api.me().user_mentions)
-# print api.me().User(follow_request_sent))
+# print api.me().hashtags
+# print api.me().indices
+# print api.me().is_quote_status
+# print api.me().is_translation_enabled
+# print api.me().is_translator
+# print api.me().place
+# print api.me().urls
+# print api.me().user_mentions
+# print api.me().User(follow_request_sent)
 #----------------------------------
-# print api.me()._api)
