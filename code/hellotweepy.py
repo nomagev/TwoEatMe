@@ -36,9 +36,7 @@ if fileexists is False:
     print "-------------------------------------------------"
     print "|                      Hi!                      |"
     print "|     It seems this is your first time here!    |"
-    print "|To use this program, there is MUST requirement!|"
-    print "|    Note: This will be a one-off exercise!     |"
-    print "|If everything works, you will not see me again |"
+    print "|  To use this program, there is a requirement  |"
     print "-------------------------------------------------"
     pause()
     clear()
@@ -51,6 +49,9 @@ if fileexists is False:
     print "|       - Twitter Consumer Secret Key           |"
     print "|          - Twitter Access Token               |"
     print "|        - Twitter Access Token Secret          |"
+    print "|                                               |"
+    print "|    Note: This will be a one-off exercise!     |"
+    print "|If everything works, you will not see me again |"
     print "|                                               |"
     print "|    Once you have all of those details,        |"
     print "|      Please press a key to continue:          |"
