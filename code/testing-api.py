@@ -42,32 +42,27 @@ else:
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-
 api = tweepy.API(auth)
-
-# This ones work for yourself, but they give a
-# lot of info, so it's better to keep them off
-# until we find the # way to work with them.
-# print api.me())
-
-# These ones retrieve specific data-points from
-# the selected user
+stream = tweepy.StreamListener()
 
 def aboutme():
-    print "      User Name:", api.me().name
-    print "Screen Name (@):", api.me().screen_name
-    print "    Description:", api.me().description
-    print "  User Location:", api.me().location
-    print "      Followers:", api.me().followers_count
-    print "      Following:", api.me().friends_count
-    print "    # of Twitts:", api.me().statuses_count
-    print "  Creation Date:", api.me().created_at
-    print "      Time Zone:", api.me().time_zone
-    print "       Language:", api.me().lang
-    print "   Listed Count:", api.me().listed_count
-    print "Verified Phone?:", api.me().needs_phone_verification
+    print "----------------------- USER -------------------------"
+    print "|      User Name:", api.me().name
+    print "|Screen Name (@):", api.me().screen_name
+    print "|    Description:", api.me().description
+    print "|  User Location:", api.me().location
+    print "|      Followers:", api.me().followers_count
+    print "|      Following:", api.me().friends_count
+    print "|    # of Twitts:", api.me().statuses_count
+    print "|  Creation Date:", api.me().created_at
+    print "|      Time Zone:", api.me().time_zone
+    print "|       Language:", api.me().lang
+    print "|   Listed Count:", api.me().listed_count
+    print "|Verified Phone?:", api.me().needs_phone_verification
+    print "------------------------------------------------------"
 
 def aboutmeextended():
+    print "------------------ MORE ABOUT USER -------------------"
     print "          Contributors Enabled:", api.me().contributors_enabled
     print "          Uses Default Profile:", api.me().default_profile
     print "    Uses Default Profile Image:", api.me().default_profile_image
@@ -98,12 +93,13 @@ def aboutmeextended():
     print "             Profile has a URL:", api.me().url
     print "       UTC Offset (in Seconds):", api.me().utc_offset
     print "                   is verified:", api.me().verified
+    print "------------------------------------------------------"
 
 # Long format of latest status
 # print api.me().status
 
-username = "vegamontesino"
 def currentstatus():
+    print "-------------------- LATEST TWEET --------------------"
     print "Twitt Content:", api.me().status.text
     print "    Truncated:", api.me().status.truncated
     print "   Created at:", api.me().status.created_at
@@ -112,9 +108,9 @@ def currentstatus():
     print "         Favs:", api.me().status.favorite_count
     print "     Retweets:", api.me().status.retweet_count
     print "        Place:", api.me().status.place
-
+    print "------------------------------------------------------"
 def currentstatusextended():
-    print ""
+    print "-------------- MORE ABOUT LATEST TWEET ---------------"
     print "          Contributor:", api.me().status.contributors
     print "         Quote Status:", api.me().status.is_quote_status
     print "In reply to status Id:", api.me().status.in_reply_to_status_id
@@ -132,10 +128,17 @@ def currentstatusextended():
     print "       Twitt Language:", api.me().status.lang
     print "In reply to Status Id:", api.me().status.in_reply_to_status_id_str
     print "            Retweeted:", api.me().status.retweeted
+    print "------------------------------------------------------"
+
+def twittertimeline():
+    #print api.user_timeline(api.me().screen_name)
+    #print api.home_timeline()
 
 aboutme()
 print "-------------------------------------"
 currentstatus()
+print "-------------------------------------"
+twittertimeline()
 
 #----------------------------------
 # print api.me().hashtags
