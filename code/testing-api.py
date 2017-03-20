@@ -47,18 +47,17 @@ stream = tweepy.StreamListener()
 
 def aboutme():
     print "----------------------- USER -------------------------"
-    print "|      User Name:", api.me().name
-    print "|Screen Name (@):", api.me().screen_name
-    print "|    Description:", api.me().description
-    print "|  User Location:", api.me().location
-    print "|      Followers:", api.me().followers_count
-    print "|      Following:", api.me().friends_count
-    print "|    # of Twitts:", api.me().statuses_count
-    print "|  Creation Date:", api.me().created_at
-    print "|      Time Zone:", api.me().time_zone
-    print "|       Language:", api.me().lang
-    print "|   Listed Count:", api.me().listed_count
-    print "|Verified Phone?:", api.me().needs_phone_verification
+    print "|   User Name:", api.me().name
+    print "| Account (@):", api.me().screen_name
+    print "| Description:", api.me().description
+    print "|    Location:", api.me().location
+    print "|   Followers:", api.me().followers_count
+    print "|   Following:", api.me().friends_count
+    print "| # of Twitts:", api.me().statuses_count
+    print "|    Creation:", api.me().created_at
+    print "|   Time Zone:", api.me().time_zone
+    print "|    Language:", api.me().lang
+    print "|Listed Count:", api.me().listed_count
     print "------------------------------------------------------"
 
 def aboutmeextended():
@@ -68,7 +67,7 @@ def aboutmeextended():
     print "    Uses Default Profile Image:", api.me().default_profile_image
     print "                      Entities:", api.me().entities
     print "                     Following:", api.me().following
-    print "          # of Twitts favoured:", api.me().favourites_count
+    print "              Twitts favorited:", api.me().favourites_count
     print "                is Geo-enabled:", api.me().geo_enabled
     print "          has extended profile:", api.me().has_extended_profile
     print "                        Raw Id:", api.me().id
@@ -92,6 +91,7 @@ def aboutmeextended():
     print "          uses Translator Type:", api.me().translator_type
     print "             Profile has a URL:", api.me().url
     print "       UTC Offset (in Seconds):", api.me().utc_offset
+    print "               Verified Phone?:", api.me().needs_phone_verification
     print "                   is verified:", api.me().verified
     print "------------------------------------------------------"
 
@@ -100,15 +100,16 @@ def aboutmeextended():
 
 def currentstatus():
     print "-------------------- LATEST TWEET --------------------"
-    print "Twitt Content:", api.me().status.text
-    print "    Truncated:", api.me().status.truncated
-    print "   Created at:", api.me().status.created_at
-    print "  In reply to:", api.me().status.in_reply_to_screen_name
-    print "       Source:", api.me().status.source
-    print "         Favs:", api.me().status.favorite_count
-    print "     Retweets:", api.me().status.retweet_count
-    print "        Place:", api.me().status.place
+    print "|   Status:", api.me().status.text
+    print "|Truncated:", api.me().status.truncated
+    print "|     Date:", api.me().status.created_at
+    print "| Reply to:", api.me().status.in_reply_to_screen_name
+    print "|   Source:", api.me().status.source
+    print "|     Favs:", api.me().status.favorite_count
+    print "| Retweets:", api.me().status.retweet_count
+    print "|    Place:", api.me().status.place
     print "------------------------------------------------------"
+
 def currentstatusextended():
     print "-------------- MORE ABOUT LATEST TWEET ---------------"
     print "          Contributor:", api.me().status.contributors
@@ -135,9 +136,9 @@ def twittertimeline():
     #print api.home_timeline()
 
 aboutme()
-print "-------------------------------------"
+print ""
 currentstatus()
-print "-------------------------------------"
+print ""
 twittertimeline()
 
 #----------------------------------
