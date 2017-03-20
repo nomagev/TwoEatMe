@@ -99,6 +99,11 @@ api = tweepy.API(auth)
 stream = tweepy.StreamListener()
 
 def aboutme():
+    '''
+    We trigger a quick analysis
+    on main attributes of the logging
+    user
+    '''
     print "----------------------- USER -------------------------"
     print "|   User Name:", api.me().name
     print "| Account (@):", api.me().screen_name
@@ -114,6 +119,11 @@ def aboutme():
     print "------------------------------------------------------"
 
 def aboutmeextended():
+    '''
+    We trigger an extended analysis
+    on rest of attributes of the logging
+    user
+    '''
     print "------------------ MORE ABOUT USER -------------------"
     print "          Contributors Enabled:", api.me().contributors_enabled
     print "          Uses Default Profile:", api.me().default_profile
@@ -149,6 +159,11 @@ def aboutmeextended():
     print "------------------------------------------------------"
 
 def currentstatus():
+    '''
+    We trigger a quick reading
+    on main attributes from last
+    published twitt by the user
+    '''
     print "-------------------- LATEST TWEET --------------------"
     print "|   Status:", api.me().status.text
     print "|Truncated:", api.me().status.truncated
@@ -161,6 +176,11 @@ def currentstatus():
     print "------------------------------------------------------"
 
 def currentstatusextended():
+    '''
+    We trigger an extended reading
+    on additional attributes from last
+    published twitt by the user
+    '''
     print "-------------- MORE ABOUT LATEST TWEET ---------------"
     print "          Contributor:", api.me().status.contributors
     print "         Quote Status:", api.me().status.is_quote_status
@@ -185,4 +205,4 @@ aboutme()
 print ""
 currentstatus()
 print ""
-twittertimeline()
+#twittertimeline()
