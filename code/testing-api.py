@@ -38,13 +38,14 @@ else:
         access_token = keylist[2]
         access_token_secret = keylist[3]
 
-# This will be the part where we will work on the API interaction.
+# Authorization and Credentials
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-alltweets = []
-timeline = api.user_timeline()
+# Timeline
+
+timeline = api.user_timeline
 
 print timeline
