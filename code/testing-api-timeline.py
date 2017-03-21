@@ -46,9 +46,35 @@ api = tweepy.API(auth)
 
 # Timeline
 
-twitter_home_timeline = api.home_timeline(count=1)
-twitter_user_timeline = api.user_timeline(count=1)
+twitter_home_timeline = api.home_timeline(count=10)
+for home_tweet in twitter_home_timeline:
+    tweets_home_timeline = home_tweet.text.encode("utf-8")
+    print tweets_home_timeline
+    print "------------------------------------------------------------------------"
 
-print twitter_home_timeline
-print "-----------------"
-print twitter_user_timeline
+twitter_user_timeline = api.user_timeline(count=10)
+for user_tweet in twitter_user_timeline:
+    tweets_user_timeline = user_tweet.text
+    print tweets_user_timeline.encode("utf-8")
+    print "------------------------------------------------------------------------"
+
+twitter_trends = api.trends_available
+
+# Search
+
+twitter_search = tweepy.Cursor(api.search, q='Madrid').items(10)
+#for tweet in twitter_search:
+#   print tweet.created_at, tweet.text, tweet.lang
+
+
+#twitter_home_timeline = api.home_timeline(count=10)
+#for home_tweet in twitter_home_timeline:
+#    tweets_home_timeline = home_tweet.created_at, home_tweet.text.encode("utf-8"), home_tweet.lang
+#    print tweets_home_timeline
+#    print "-------------"
+
+#twitter_user_timeline = api.user_timeline(count=10)
+#for user_tweet in twitter_user_timeline:
+#    tweets_user_timeline = user_tweet.created_at, user_tweet.text.encode("utf-8"), user_tweet.lang
+#    print tweets_user_timeline
+#    print "-------------"

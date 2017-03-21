@@ -122,7 +122,7 @@ def about_me():
 def about_me_extended():
     '''
     We trigger an extended reading on
-    the rest of attributes from the 
+    the rest of attributes from the
     logging user
     '''
     print "------------------ MORE ABOUT USER -------------------"
@@ -202,22 +202,47 @@ def current_twitt_extended():
     print "            Retweeted:", api.me().status.retweeted
     print "------------------------------------------------------"
 
+def last_10_twitts_received():
+    '''
+    We trigger an quick reading over
+    the last 10 twitts published on 
+    the user timeline
+    '''
+    twitter_home_timeline = api.home_timeline(count=10)
+    for home_tweet in twitter_home_timeline:
+        tweets_home_timeline = home_tweet.text
+        print tweets_home_timeline.encode("utf-8")
+        print "------------------------------------------------------"
+
+def last_10_twitts_sent():
+    '''
+    We trigger an quick reading over the
+    last 10 twitts sent by the user
+    '''
+
+    twitter_user_timeline = api.user_timeline(count=10)
+    for user_tweet in twitter_user_timeline:
+        tweets_user_timeline = user_tweet.text
+        print tweets_user_timeline.encode("utf-8")
+        print "------------------------------------------------------"
+
 def menu_description():
     '''
     We will now proceed to offer the user the
     possible options he may want to execute
     '''
     print ""
-    print "---------------- HelloTweepy Options -----------------"
+    print " --------------- HelloTweepy Commands --------------- "
     print "|  - Enter 'U' for your Basic Twitter Details        |"
     print "|  - Enter 'UU' for your Twitter Extended Details    |"
     print "|  - Enter 'T' for your last Twitt Basic Details     |"
     print "|  - Enter 'TT' for your last Twitt Extended Details |"
-    print "|  - Enter 'Q' to Quit the Program                   |"
+    print "|  - Enter 'R' for the last 10 tweets you received   |"
+    print "|  - Enter 'S' for the last 10 tweets you sent       |"
     print "|----------------- Program Options ------------------|"
     print "|  - Enter 'Q' to Quit the Program                   |"
     print "|  - Enter 'C' to Clear the Screen                   |"
-    print "------------------------------------------------------"
+    print " ---------------------------------------------------- "
     print ""
 
 menu_description()
@@ -225,29 +250,39 @@ menu_description()
 ans = True
 while ans:
     ans = raw_input("What would you like to do? ")
-    if ans == 'U':
+    if ans == 'U' or ans == 'u':
         print "Here are your Basic Twitter Details"
         about_me()
         menu_description()
-    elif ans == 'UU':
+    elif ans == 'UU' or ans == 'uu':
         print ""
         about_me_extended()
         menu_description()
-    elif ans == 'T':
+    elif ans == 'T' or ans == 't':
         print ""
         current_twitt()
         menu_description()
-    elif ans == 'TT':
+    elif ans == 'TT' or ans == 'tt':
         print ""
         current_twitt_extended()
         menu_description()
-    elif ans == 'Q':
+    elif ans == 'R' or ans == 'r':
+        print ""
+        last_10_twitts_received()
+        menu_description()
+    elif ans == 'S' or ans == 's':
+        print ""
+        last_10_twitts_sent()
+        menu_description()
+    elif ans == 'Q' or ans == 'q':
         print ""
         sys.exit("See you soon!")
-    elif ans == 'C':
+    elif ans == 'C' or ans == 'c':
         clear()
         menu_description()
     else:
         print ""
-        print "Wrong Option (check capital letters and select the right option:)"
+        print "You entered a wrong instruction: please try again"
         menu_description()
+
+# End of Program
