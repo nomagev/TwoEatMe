@@ -23,3 +23,20 @@ To run this code, you may need to have installed in your computer or have availa
     - Twitter Consumer Secret Key
     - Twitter Access Token
     - Twitter Access Token Secret
+
+# Program
+
+The program is hosted under the [code master folder](https://github.com/nomagev/nomagev-twtt/tree/master/code) on this repository (check 'hellotweepy.py').
+
+You can run it on your terminal (do not forget to check the "Dependencies" on the section above) or your Command Prompt by copying your file on your local drive and, on the same folder, run 'python hellotweepy.py'.
+
+# Current Status (as of March 20th 2017)
+
+Current program is able to:
+1. **Tweepy Library Check:** Check whether Tweepy Library is installed on your system.
+2. **File containing Twitter Apps Check:** Check whether 'Keys-DO-NOT-COMMIT.txt' file exists.
+  - If not, program will prompt you to enter your Twitter Apps Credentials and how to obtain them.
+    - Program will then load them under 'Keys-DO-NOT-COMMIT.txt' file, so it won't ask you again about it.
+  - If so, program will read your Twitter Apps keys
+3. **Your Basic Twitter Information:** Display basic details on your Twitter Account
+4. **Your Basic last Twitt Information:** Display basic details on your last published Twitt.
