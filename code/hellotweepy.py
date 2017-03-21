@@ -9,12 +9,12 @@ try:
     import tweepy
 except ImportError:
     print "-------------------------------------------------"
-    print "|    Tweepy method is missing on your system!    |"
-    print "|   Install it by using the following command:   |"
-    print "|               pip install tweepy               |"
-    print "|  Note:Use Admin Rights may be needed to do so  |"
+    print "|    Tweepy method is missing on your system!   |"
+    print "|   Install it by using the following command:  |"
+    print "|               pip install tweepy              |"
+    print "|  Note:Use Admin Rights may be needed to do so |"
     print "-------------------------------------------------"
-    os.abort()
+    sys.exit()
 
 if sys.platform == "linux" or sys.platform == "linux2":
     clear = lambda: os.system('clear')
@@ -36,7 +36,8 @@ if fileexists is False:
     print "-------------------------------------------------"
     print "|                      Hi!                      |"
     print "|     It seems this is your first time here!    |"
-    print "|  To use this program, there is a requirement  |"
+    print "|    To use this program, we need to work on    |"
+    print "|            some necessary data...             |"
     print "-------------------------------------------------"
     pause()
     clear()
@@ -53,9 +54,10 @@ if fileexists is False:
     print "|    Note: This will be a one-off exercise!     |"
     print "|If everything works, you will not see me again |"
     print "|                                               |"
-    print "|    Once you have all of those details,        |"
-    print "|      Please press a key to continue:          |"
+    print "|      Once you have all of those details,      |"
+    print "|        Please press a key to continue:        |"
     print "-------------------------------------------------"
+    pause()
     print ""
     print "-------------------------------------------------"
     print "|      We will store those keys into a file.    |"
@@ -98,11 +100,10 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 stream = tweepy.StreamListener()
 
-def aboutme():
+def about_me():
     '''
-    We trigger a quick analysis
-    on main attributes of the logging
-    user
+    We trigger a basic reading on
+    the attributes from the logging user
     '''
     print "----------------------- USER -------------------------"
     print "|   User Name:", api.me().name
@@ -118,11 +119,11 @@ def aboutme():
     print "|Listed Count:", api.me().listed_count
     print "------------------------------------------------------"
 
-def aboutmeextended():
+def about_me_extended():
     '''
-    We trigger an extended analysis
-    on rest of attributes of the logging
-    user
+    We trigger an extended reading on
+    the rest of attributes from the 
+    logging user
     '''
     print "------------------ MORE ABOUT USER -------------------"
     print "          Contributors Enabled:", api.me().contributors_enabled
@@ -158,9 +159,9 @@ def aboutmeextended():
     print "                   is verified:", api.me().verified
     print "------------------------------------------------------"
 
-def currentstatus():
+def current_twitt():
     '''
-    We trigger a quick reading
+    We trigger a basic reading
     on main attributes from last
     published twitt by the user
     '''
@@ -175,7 +176,7 @@ def currentstatus():
     print "|    Place:", api.me().status.place
     print "------------------------------------------------------"
 
-def currentstatusextended():
+def current_twitt_extended():
     '''
     We trigger an extended reading
     on additional attributes from last
@@ -201,8 +202,52 @@ def currentstatusextended():
     print "            Retweeted:", api.me().status.retweeted
     print "------------------------------------------------------"
 
-aboutme()
-print ""
-currentstatus()
-print ""
-#twittertimeline()
+def menu_description():
+    '''
+    We will now proceed to offer the user the
+    possible options he may want to execute
+    '''
+    print ""
+    print "---------------- HelloTweepy Options -----------------"
+    print "|  - Enter 'U' for your Basic Twitter Details        |"
+    print "|  - Enter 'UU' for your Twitter Extended Details    |"
+    print "|  - Enter 'T' for your last Twitt Basic Details     |"
+    print "|  - Enter 'TT' for your last Twitt Extended Details |"
+    print "|  - Enter 'Q' to Quit the Program                   |"
+    print "|----------------- Program Options ------------------|"
+    print "|  - Enter 'Q' to Quit the Program                   |"
+    print "|  - Enter 'C' to Clear the Screen                   |"
+    print "------------------------------------------------------"
+    print ""
+
+menu_description()
+
+ans = True
+while ans:
+    ans = raw_input("What would you like to do? ")
+    if ans == 'U':
+        print "Here are your Basic Twitter Details"
+        about_me()
+        menu_description()
+    elif ans == 'UU':
+        print ""
+        about_me_extended()
+        menu_description()
+    elif ans == 'T':
+        print ""
+        current_twitt()
+        menu_description()
+    elif ans == 'TT':
+        print ""
+        current_twitt_extended()
+        menu_description()
+    elif ans == 'Q':
+        print ""
+        sys.exit("See you soon!")
+    elif ans == 'C':
+        clear()
+        menu_description()
+    else:
+        print ""
+        print "Wrong Option (check capital letters and select the right option:)"
+        menu_description()
