@@ -17,6 +17,8 @@ except ImportError:
     print "|               pip install tweepy              |"
     print "|  Note:Use Admin Rights may be needed to do so |"
     print "-------------------------------------------------"
+    chcp = os.popen('chcp')
+    chcp.read()
     sys.exit()
 
 if sys.platform == "linux" or sys.platform == "linux2":
