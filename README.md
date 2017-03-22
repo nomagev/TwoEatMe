@@ -1,4 +1,4 @@
-# nomagev-twtt
+# TwoEat
 
 A little experiment using git, Python and the Twitter API
 
@@ -7,6 +7,8 @@ A little experiment using git, Python and the Twitter API
 The following are a sequence of steps followed to prepare our system to be able to properly run-and-create the application. This may serve you in case you want to play with the code.
 
 Usage of it relies on your own responsibility: it's not Rocket Science, but in case something goes wrong, you are fully responsible for the use of it (the intended usage of whatever I put in here is for my own personal use).
+
+Please [](report bugs here) if you find one.
 
 The code and the things contained within the repository (excluding content accessible through links) are offered under a [GPL 2.0 License](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html): Sharing is caring.
 
