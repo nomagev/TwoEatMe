@@ -34,7 +34,7 @@ fileexists = os.path.exists("keys-DO-NOT-COMMIT.txt")
 
 if fileexists is False:
     print "-------------------------------------------------"
-    print "|                      Hi!                      |"
+    print "|             Hi! Welcome 2 TwoEat!             |"
     print "|     It seems this is your first time here!    |"
     print "|    To use this program, we need to work on    |"
     print "|            some necessary data...             |"
@@ -58,6 +58,7 @@ if fileexists is False:
     print "|        Please press a key to continue:        |"
     print "-------------------------------------------------"
     pause()
+    clear()
     print ""
     print "-------------------------------------------------"
     print "|      We will store those keys into a file.    |"
@@ -65,6 +66,9 @@ if fileexists is False:
     print "|  it will be located into the directory where  |"
     print "|           you copied this program...          |"
     print "-------------------------------------------------"
+    print ""
+    pause()
+    clear()
     print ""
     print "-------------------------------------------------"
     print "|                  PLEASE NOTE:                 |"
@@ -74,6 +78,7 @@ if fileexists is False:
     print "-------------------------------------------------"
     print ""
     pause()
+    clear()
     print ""
     print "Okay! Let's do it then!"
     print ""
@@ -84,6 +89,7 @@ if fileexists is False:
     keylist = [consumer_key, consumer_secret, access_token, access_token_secret]
     with open('keys-DO-NOT-COMMIT.txt', "wb") as keyloader:
         pickle.dump(keylist, keyloader)
+    clear()
 
 else:
     with open('keys-DO-NOT-COMMIT.txt', "rb") as keyloader:
