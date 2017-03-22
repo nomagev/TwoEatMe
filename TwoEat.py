@@ -5,6 +5,9 @@ import pickle
 # pylint: disable=C0103
 # -*- coding: utf-8 -*-
 
+chcp = os.popen('chcp 65001')
+chcp.read()
+
 try:
     import tweepy
 except ImportError:
@@ -211,13 +214,13 @@ def current_twitt_extended():
 def last_10_twitts_received():
     '''
     We trigger an quick reading over
-    the last 10 twitts published on 
+    the last 10 twitts published on
     the user timeline
     '''
     twitter_home_timeline = api.home_timeline(count=10)
     for home_tweet in twitter_home_timeline:
         tweets_home_timeline = home_tweet.text
-        print tweets_home_timeline.encode("utf-8")
+        print tweets_home_timeline.encode('utf-8')
         print "------------------------------------------------------"
 
 def last_10_twitts_sent():
@@ -238,16 +241,12 @@ def menu_description():
     possible options he may want to execute
     '''
     print ""
-    print " ----------------- TwoEat  Commands ----------------- "
-    print "|  - Enter 'U' for your Basic Twitter Details        |"
-    print "|  - Enter 'UU' for your Twitter Extended Details    |"
-    print "|  - Enter 'T' for your last Twitt Basic Details     |"
-    print "|  - Enter 'TT' for your last Twitt Extended Details |"
-    print "|  - Enter 'R' for the last 10 tweets you received   |"
-    print "|  - Enter 'S' for the last 10 tweets you sent       |"
+    print " ---------------- TwoEat   Commands ----------------- "
+    print "| 'U' = You @ Twitter    | 'UU' = You @ Twitter ++   |"
+    print "| 'T' = Your Last Tweet  | 'TT' = Last Tweet ++      |"
+    print "| 'R' = 10 latest tweets | 'S'  = Your last 10 tweets|"
     print "|----------------- Program Options ------------------|"
-    print "|  - Enter 'Q' to Quit the Program                   |"
-    print "|  - Enter 'C' to Clear the Screen                   |"
+    print "| 'C' = Clear Screen     | 'Q' = Quit Program        |"
     print " ---------------------------------------------------- "
     print ""
 
@@ -283,6 +282,8 @@ while ans:
     elif ans == 'Q' or ans == 'q':
         print ""
         sys.exit("See you soon!")
+        chcp = os.popen('chcp')
+        chcp.read()
     elif ans == 'C' or ans == 'c':
         clear()
         menu_description()
