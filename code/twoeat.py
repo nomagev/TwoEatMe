@@ -70,7 +70,7 @@ if fileexists is False:
     print "|                  PLEASE NOTE:                 |"
     print "|      If you share this program, remember:     |"
     print "|DON'T share keys-DO-NOT-COMMIT.txt with anyone!|"
-    print "|      Just share  the", filename, "file      |"
+    print "|      Just share  the", filename, "file       |"
     print "-------------------------------------------------"
     print ""
     pause()
@@ -232,7 +232,7 @@ def menu_description():
     possible options he may want to execute
     '''
     print ""
-    print " --------------- HelloTweepy Commands --------------- "
+    print " ----------------- TwoEat  Commands ----------------- "
     print "|  - Enter 'U' for your Basic Twitter Details        |"
     print "|  - Enter 'UU' for your Twitter Extended Details    |"
     print "|  - Enter 'T' for your last Twitt Basic Details     |"
