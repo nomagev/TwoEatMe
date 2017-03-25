@@ -1,10 +1,10 @@
 # TwoEat
 
-A little experiment using git, Python and the Twitter API
+"TwoEat" is a little experiment using git, Python and Python's Tweepy library to create a Twitter, text-based client, using their Public API. 
 
 # Premises
 
-The following are a sequence of steps followed to prepare our system to be able to properly run-and-create the application. This may serve you in case you want to play with the code.
+The following are a sequence of steps followed to prepare our system to be able to properly run-and-create TwoEat. This may serve you in case you want to play with the code.
 
 Usage of it relies on your own responsibility: it's not Rocket Science, but in case something goes wrong, you are fully responsible for the use of it (the intended usage of whatever I put in here is for my own personal use).
 
@@ -28,17 +28,26 @@ To run this code, you may need to have installed in your computer or have availa
 
 # Program
 
-The program is hosted under the [code master folder](https://github.com/nomagev/nomagev-twtt/tree/master/code) on this repository (check 'hellotweepy.py').
+The program is hosted under the [master folder](https://github.com/nomagev/twoeat/) on this repository (check 'TwoEat.py').
 
-You can run it on your terminal (do not forget to check the "Dependencies" on the section above) or your Command Prompt by copying your file on your local drive and, on the same folder, run 'python hellotweepy.py'.
+You can run it on your terminal (do not forget to check the "Dependencies" on the section above) or your Command Prompt by copying your file on your local drive and, on the same folder, run 'python TwoEat.py'.
 
-# Current Status (as of March 20th 2017)
+# Current Status (as of March 25th 2017)
 
 Current program is able to:
-1. **Tweepy Library Check:** Check whether Tweepy Library is installed on your system.
-2. **File containing Twitter Apps Check:** Check whether 'Keys-DO-NOT-COMMIT.txt' file exists.
+1. **Tweepy Library Check:** Program checks whether Tweepy Library is installed on your system.
+2. **OS Check:** Program checks which OS are you using (Windows, macOS or Linux). 
+3. **File containing Twitter Apps Check:**  Program checks whether 'Keys-DO-NOT-COMMIT.txt' file (containing user keys and tokens necessary to run the tool) exists.
   - If not, program will prompt you to enter your Twitter Apps Credentials and how to obtain them.
     - Program will then load them under 'Keys-DO-NOT-COMMIT.txt' file, so it won't ask you again about it.
   - If so, program will read your Twitter Apps keys
-3. **Your Basic Twitter Information:** Display basic details on your Twitter Account
-4. **Your Basic last Twitt Information:** Display basic details on your last published Twitt.
+4. **Twitter Options Menu**: the program displays a menu with some Twitter options you can trigger, including: 
+  - **Your Basic Twitter Information:** Display basic details on your Twitter Account.
+  - **Your Additional Twitter Information:** Display additional details on your Twitter Account you may not be aware of.
+  - **Your last Tweet's Basic Information:** Display basic details on your last published Tweet.
+  - **Your last Tweet's Additional Information:** Display additional details on your last published Tweet you may not be aware of.
+  - **The last 10 Tweets you received:** Display the last 10 Public tweets you may have received on your Twitter Timeline.
+  - **The last 10 Tweets you sent:** Display the last 10 Public tweets you may have sent on Twitter.
+5. **Program Options Menu**: the program displays a couple of internal options you can trigger, including: 
+  - **Clear the Screen:** The option will clear the text already displayed in the screen.
+  - **Quit the Application:** The option will instruction the program to succesfully quit and go back to the command prompt on your shell.
