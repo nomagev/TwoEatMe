@@ -257,7 +257,7 @@ def send_a_tweet():
     write_a_tweet = raw_input("Write your tweet (remember: no more than 140 characters): ")
     print "your tweet has", len(write_a_tweet), "characters."
     if len(write_a_tweet) <= 140:
-        status = api.update_status(status=write_a_tweet)
+        status = api.update_status(status=write_a_tweet, source="TwoEat")
     else:
         print ""
         print "Your tweet has", len(write_a_tweet), "characters: please try again"
