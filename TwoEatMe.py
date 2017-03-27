@@ -1,12 +1,33 @@
-import os
-import sys
-import pickle
+"""TwoEatMe.py is a simple, prompt-based
+program,  python-based,  to  use Twitter
+through the  Twitter  API, using Tweepy
+and Twitter Apps Credentials"""
 
-# pylint: disable=C0103
+__version__ = '2.0.1'
+__author__ = 'TwoEat.me'
+__maintainer__ = "nomagev"
+__copyright__ = "Copyleft - Attribution Required - See GPL 2.0"
+__credits__ = []
+__license__ = "GPL 2.0"
+__email__ = ""
+__status__ = "Production"
+
+
+import pickle
+import sys
+import os
+
 # -*- coding: utf-8 -*-
 
-chcp = os.popen('chcp 65001')
-chcp.read()
+def settingchcp():
+    '''
+    Triggers a command to set the right  set
+    of characters on the Prompt Shell.
+    '''
+    chcp = os.popen('chcp.com 65001')
+    chcp.read()
+
+settingchcp()
 
 try:
     import tweepy
@@ -17,8 +38,6 @@ except ImportError:
     print "|               pip install tweepy              |"
     print "|  Note:Use Admin Rights may be needed to do so |"
     print "-------------------------------------------------"
-    chcp = os.popen('chcp')
-    chcp.read()
     sys.exit()
 
 if sys.platform == "linux" or sys.platform == "linux2":
@@ -29,7 +48,7 @@ elif sys.platform == "darwin":
     pause = lambda: os.system('read -p "$*"')
 elif sys.platform == "win32":
     clear = lambda: os.system('cls')
-    pause = lambda: os.system("pause")
+    pause = lambda: os.system('pause')
 
 clear()
 
@@ -113,8 +132,8 @@ stream = tweepy.StreamListener()
 
 def about_me():
     '''
-    We trigger a basic reading on
-    the attributes from the logging user
+    Triggers a  basic  reading on  the  main
+    attributes from the logging user.
     '''
     print "----------------------- USER -------------------------"
     print "|   User Name:", api.me().name
@@ -132,9 +151,9 @@ def about_me():
 
 def about_me_extended():
     '''
-    We trigger an extended reading on
-    the rest of attributes from the
-    logging user
+    Triggers an extended reading on the rest
+    of  attributes, from the  logging  user,
+    via Twitter Apps Credentials.
     '''
     print "------------------ MORE ABOUT USER -------------------"
     print "          Contributors Enabled:", api.me().contributors_enabled
@@ -170,11 +189,11 @@ def about_me_extended():
     print "                   is verified:", api.me().verified
     print "------------------------------------------------------"
 
-def current_twitt():
+def current_tweet():
     '''
-    We trigger a basic reading
-    on main attributes from last
-    published twitt by the user
+    Triggers a  basic  reading  on  the main
+    attributes from  last published tweet by
+    the user.
     '''
     print "-------------------- LATEST TWEET --------------------"
     print "|   Status:", api.me().status.text
@@ -187,18 +206,18 @@ def current_twitt():
     print "|    Place:", api.me().status.place
     print "------------------------------------------------------"
 
-def current_twitt_extended():
+def current_tweet_extended():
     '''
-    We trigger an extended reading
-    on additional attributes from last
-    published twitt by the user
+    Triggers a command to set the right  set
+    Triggers  an  extended  reading  on  the
+    additional  attributes   from  the  last
+    published tweet by the user.
     '''
     print "-------------- MORE ABOUT LATEST TWEET ---------------"
     print "          Contributor:", api.me().status.contributors
     print "         Quote Status:", api.me().status.is_quote_status
     print "In reply to status Id:", api.me().status.in_reply_to_status_id
     print "            Status Id:", api.me().status.id
-    print "                  API:", api.me().status._api
     #print "         status JSON:", api.me().status._json
     print "          Coordinates:", api.me().status.coordinates
     #print "     Status entities:", api.me().status.entities
@@ -213,11 +232,10 @@ def current_twitt_extended():
     print "            Retweeted:", api.me().status.retweeted
     print "------------------------------------------------------"
 
-def last_10_twitts_received():
+def last_10_tweets_received():
     '''
-    We trigger an quick reading over
-    the last 10 twitts published on
-    the user timeline
+    Triggers a quick  reading  over the last
+    10 tweets received on the user timeline.
     '''
     twitter_home_timeline = api.home_timeline(count=10)
     for home_tweet in twitter_home_timeline:
@@ -225,10 +243,10 @@ def last_10_twitts_received():
         print tweets_home_timeline.encode('utf-8')
         print "------------------------------------------------------"
 
-def last_10_twitts_sent():
+def last_10_tweets_sent():
     '''
-    We trigger an quick reading over the
-    last 10 twitts sent by the user
+    Triggers a  quick  reading over the last
+    10 tweets sent by the user.
     '''
 
     twitter_user_timeline = api.user_timeline(count=10)
@@ -239,8 +257,7 @@ def last_10_twitts_sent():
 
 def trends():
     '''
-    We trigger an quick reading over
-    Twitter trends
+    Triggers a  search  over Twitter trends.
     '''
     twitter_trends = api.trends_place(1)
     twitter_trend_data = twitter_trends[0]
@@ -252,13 +269,15 @@ def trends():
 
 def send_a_tweet():
     '''
-    We try to send a tweet
+    Triggers the Method to send a tweet.
     '''
     write_a_tweet = raw_input("Write your tweet (remember: no more than 140 characters): ")
     if len(write_a_tweet) <= 140:
-        status = api.update_status(status=write_a_tweet, source="TwoEat")
+        api.update_status(write_a_tweet)
         print ""
-        print "Your tweet:", write_a_tweet, "- containing", len(write_a_tweet), "characters, has been published."
+        print "Your tweet:", write_a_tweet, \
+        "- containing", len(write_a_tweet), \
+        "characters, has been published."
         print ""
     else:
         print ""
@@ -268,8 +287,8 @@ def send_a_tweet():
 
 def menu_description():
     '''
-    We will now proceed to offer the user the
-    possible options he may want to execute
+    Triggers a menu to offer to the user the
+    possible options he may want to execute.
     '''
     print ""
     print " ---------------- TwoEat   Commands ----------------- "
@@ -298,19 +317,19 @@ while ans:
         menu_description()
     elif ans == 'T' or ans == 't':
         print ""
-        current_twitt()
+        current_tweet()
         menu_description()
     elif ans == 'T+' or ans == 't+':
         print ""
-        current_twitt_extended()
+        current_tweet_extended()
         menu_description()
     elif ans == 'R' or ans == 'r':
         print ""
-        last_10_twitts_received()
+        last_10_tweets_received()
         menu_description()
     elif ans == 'S' or ans == 's':
         print ""
-        last_10_twitts_sent()
+        last_10_tweets_sent()
         menu_description()
     elif ans == 'U' or ans == 'u':
         print "Here are your Basic Twitter Details"
@@ -322,9 +341,8 @@ while ans:
         menu_description()
     elif ans == 'Q' or ans == 'q':
         print ""
+        settingchcp()
         sys.exit("See you soon!")
-        chcp = os.popen('chcp')
-        chcp.read()
     elif ans == 'C' or ans == 'c':
         clear()
         menu_description()
