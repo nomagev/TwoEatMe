@@ -6,12 +6,10 @@ and Twitter Apps Credentials"""
 __version__ = '2.0.1'
 __author__ = 'TwoEat.me'
 __maintainer__ = "nomagev"
-__copyright__ = "Copyleft - Attribution Required - See GPL 2.0"
 __credits__ = []
 __license__ = "GPL 2.0"
 __email__ = ""
 __status__ = "Production"
-
 
 import pickle
 import sys
