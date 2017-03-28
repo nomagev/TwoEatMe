@@ -1,7 +1,9 @@
-"""TwoEatMe.py is a simple, prompt-based
+'''
+TwoEatMe.py  is  a  simple, prompt-based
 program,  python-based,  to  use Twitter
-through the  Twitter  API, using Tweepy
-and Twitter Apps Credentials"""
+through with Python's Tweepy library and
+Twitter Apps Credentials.
+'''
 
 __version__ = '2.0.1'
 __author__ = 'TwoEat.me'
@@ -237,8 +239,11 @@ def last_10_tweets_received():
     '''
     twitter_home_timeline = api.home_timeline(count=10)
     for home_tweet in twitter_home_timeline:
-        tweets_home_timeline = home_tweet.text
-        print tweets_home_timeline.encode('utf-8')
+        user_id = home_tweet.user.screen_name
+        tweet_text = home_tweet.text
+        tweet_favorite_count = home_tweet.favorite_count
+        print "From: @" + user_id.encode("utf-8"), "------", "Favs:", tweet_favorite_count
+        print tweet_text.encode("utf-8")
         print "------------------------------------------------------"
 
 def last_10_tweets_sent():
@@ -246,7 +251,6 @@ def last_10_tweets_sent():
     Triggers a  quick  reading over the last
     10 tweets sent by the user.
     '''
-
     twitter_user_timeline = api.user_timeline(count=10)
     for user_tweet in twitter_user_timeline:
         tweets_user_timeline = user_tweet.text
