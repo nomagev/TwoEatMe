@@ -273,7 +273,8 @@ def last_10_tweets_received():
         user_id = home_tweet.user.screen_name
         tweet_text = home_tweet.text
         tweet_favorite_count = home_tweet.favorite_count
-        print "From: @" + user_id.encode("utf-8"), "------", "Favs:", tweet_favorite_count
+        print "From: @" + user_id.encode("utf-8"), \
+        "------", "Favs:", tweet_favorite_count
         print tweet_text.encode("utf-8")
         print "------------------------------------------------------"
 
@@ -386,7 +387,7 @@ while ans:
         menu_description()
     else:
         print ""
-        print "You entered a wrong instruction: please try again"
+        print "Wrong instruction: please try again"
         menu_description()
 
 # End of Program

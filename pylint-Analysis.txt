@@ -1,96 +1,100 @@
 ************* Module TwoEatMe
+C: 34, 4: Invalid constant name "clear" (invalid-name)
+C: 35, 4: Invalid constant name "pause" (invalid-name)
 C: 37, 4: Invalid constant name "clear" (invalid-name)
 C: 38, 4: Invalid constant name "pause" (invalid-name)
 C: 40, 4: Invalid constant name "clear" (invalid-name)
 C: 41, 4: Invalid constant name "pause" (invalid-name)
-C: 43, 4: Invalid constant name "clear" (invalid-name)
-C: 44, 4: Invalid constant name "pause" (invalid-name)
-C: 48, 0: Invalid constant name "filename" (invalid-name)
-C: 50, 0: Invalid constant name "fileexists" (invalid-name)
-C:102, 4: Invalid constant name "consumer_key" (invalid-name)
-C:103, 4: Invalid constant name "consumer_secret" (invalid-name)
-C:104, 4: Invalid constant name "access_token" (invalid-name)
-C:105, 4: Invalid constant name "access_token_secret" (invalid-name)
-C:106, 4: Invalid constant name "keylist" (invalid-name)
-C:113, 8: Invalid constant name "keylist" (invalid-name)
-C:114, 8: Invalid constant name "consumer_key" (invalid-name)
-C:115, 8: Invalid constant name "consumer_secret" (invalid-name)
-C:116, 8: Invalid constant name "access_token" (invalid-name)
-C:117, 8: Invalid constant name "access_token_secret" (invalid-name)
-C:121, 0: Invalid constant name "auth" (invalid-name)
-C:123, 0: Invalid constant name "api" (invalid-name)
-C:124, 0: Invalid constant name "stream" (invalid-name)
-E:132,28: Instance of 'APIMethod' has no 'name' member (no-member)
-E:133,28: Instance of 'APIMethod' has no 'screen_name' member (no-member)
-E:134,28: Instance of 'APIMethod' has no 'description' member (no-member)
-E:135,28: Instance of 'APIMethod' has no 'location' member (no-member)
-E:136,28: Instance of 'APIMethod' has no 'followers_count' member (no-member)
-E:137,28: Instance of 'APIMethod' has no 'friends_count' member (no-member)
-E:138,28: Instance of 'APIMethod' has no 'statuses_count' member (no-member)
-E:139,28: Instance of 'APIMethod' has no 'created_at' member (no-member)
-E:140,28: Instance of 'APIMethod' has no 'time_zone' member (no-member)
-E:141,28: Instance of 'APIMethod' has no 'lang' member (no-member)
-E:142,28: Instance of 'APIMethod' has no 'listed_count' member (no-member)
-E:152,45: Instance of 'APIMethod' has no 'contributors_enabled' member (no-member)
-E:153,45: Instance of 'APIMethod' has no 'default_profile' member (no-member)
-E:154,45: Instance of 'APIMethod' has no 'default_profile_image' member (no-member)
-E:155,45: Instance of 'APIMethod' has no 'entities' member (no-member)
-E:156,45: Instance of 'APIMethod' has no 'following' member (no-member)
-E:157,45: Instance of 'APIMethod' has no 'favourites_count' member (no-member)
-E:158,45: Instance of 'APIMethod' has no 'geo_enabled' member (no-member)
-E:159,45: Instance of 'APIMethod' has no 'has_extended_profile' member (no-member)
-E:160,45: Instance of 'APIMethod' has no 'id' member (no-member)
-E:161,45: Instance of 'APIMethod' has no 'id_str' member (no-member)
-E:162,45: Instance of 'APIMethod' has no 'notifications' member (no-member)
-E:163,45: Instance of 'APIMethod' has no 'profile_background_color' member (no-member)
-E:164,45: Instance of 'APIMethod' has no 'profile_background_image_url' member (no-member)
-E:165,45: Instance of 'APIMethod' has no 'profile_background_image_url_https' member (no-member)
-E:166,45: Instance of 'APIMethod' has no 'profile_background_tile' member (no-member)
-E:167,45: Instance of 'APIMethod' has no 'profile_banner_url' member (no-member)
-E:168,45: Instance of 'APIMethod' has no 'profile_image_url' member (no-member)
-E:169,45: Instance of 'APIMethod' has no 'profile_image_url_https' member (no-member)
-E:170,45: Instance of 'APIMethod' has no 'profile_link_color' member (no-member)
-E:171,45: Instance of 'APIMethod' has no 'profile_location' member (no-member)
-E:172,45: Instance of 'APIMethod' has no 'profile_sidebar_border_color' member (no-member)
-E:173,45: Instance of 'APIMethod' has no 'profile_sidebar_fill_color' member (no-member)
-E:174,45: Instance of 'APIMethod' has no 'profile_text_color' member (no-member)
-E:175,45: Instance of 'APIMethod' has no 'profile_use_background_image' member (no-member)
-E:176,45: Instance of 'APIMethod' has no 'protected' member (no-member)
-E:177,45: Instance of 'APIMethod' has no 'suspended' member (no-member)
-E:178,45: Instance of 'APIMethod' has no 'translator_type' member (no-member)
-E:179,45: Instance of 'APIMethod' has no 'url' member (no-member)
-E:180,45: Instance of 'APIMethod' has no 'utc_offset' member (no-member)
-E:181,45: Instance of 'APIMethod' has no 'needs_phone_verification' member (no-member)
-E:182,45: Instance of 'APIMethod' has no 'verified' member (no-member)
-E:192,25: Instance of 'APIMethod' has no 'status' member (no-member)
-E:193,25: Instance of 'APIMethod' has no 'status' member (no-member)
-E:194,25: Instance of 'APIMethod' has no 'status' member (no-member)
-E:195,25: Instance of 'APIMethod' has no 'status' member (no-member)
-E:196,25: Instance of 'APIMethod' has no 'status' member (no-member)
-E:197,25: Instance of 'APIMethod' has no 'status' member (no-member)
-E:198,25: Instance of 'APIMethod' has no 'status' member (no-member)
-E:199,25: Instance of 'APIMethod' has no 'status' member (no-member)
-E:210,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:211,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:212,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:213,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:215,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:217,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:218,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:219,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:220,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:221,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:222,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:223,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:224,36: Instance of 'APIMethod' has no 'status' member (no-member)
-E:225,36: Instance of 'APIMethod' has no 'status' member (no-member)
-C:300, 0: Invalid constant name "ans" (invalid-name)
-C:302, 4: Invalid constant name "ans" (invalid-name)
+C: 45, 0: Invalid constant name "filename" (invalid-name)
+C: 47, 0: Invalid constant name "fileexists" (invalid-name)
+C: 99, 4: Invalid constant name "consumer_key" (invalid-name)
+C:100, 4: Invalid constant name "consumer_secret" (invalid-name)
+C:101, 4: Invalid constant name "access_token" (invalid-name)
+C:102, 4: Invalid constant name "access_token_secret" (invalid-name)
+C:103, 4: Invalid constant name "keylist" (invalid-name)
+C:110, 8: Invalid constant name "keylist" (invalid-name)
+C:111, 8: Invalid constant name "consumer_key" (invalid-name)
+C:112, 8: Invalid constant name "consumer_secret" (invalid-name)
+C:113, 8: Invalid constant name "access_token" (invalid-name)
+C:114, 8: Invalid constant name "access_token_secret" (invalid-name)
+C:126, 4: Invalid variable name "p" (invalid-name)
+W:129, 4: Global variable 'chcp_code_original' undefined at the module level (global-variable-undefined)
+C:129, 4: Invalid constant name "chcp_code_original" (invalid-name)
+W:128, 4: Unused variable 'p_status' (unused-variable)
+W:127,13: Unused variable 'err' (unused-variable)
+C:154, 0: Invalid constant name "auth" (invalid-name)
+C:156, 0: Invalid constant name "api" (invalid-name)
+E:166,28: Instance of 'APIMethod' has no 'name' member (no-member)
+E:167,28: Instance of 'APIMethod' has no 'screen_name' member (no-member)
+E:168,28: Instance of 'APIMethod' has no 'description' member (no-member)
+E:169,28: Instance of 'APIMethod' has no 'location' member (no-member)
+E:170,28: Instance of 'APIMethod' has no 'followers_count' member (no-member)
+E:171,28: Instance of 'APIMethod' has no 'friends_count' member (no-member)
+E:172,28: Instance of 'APIMethod' has no 'statuses_count' member (no-member)
+E:173,28: Instance of 'APIMethod' has no 'created_at' member (no-member)
+E:174,28: Instance of 'APIMethod' has no 'time_zone' member (no-member)
+E:175,28: Instance of 'APIMethod' has no 'lang' member (no-member)
+E:176,28: Instance of 'APIMethod' has no 'listed_count' member (no-member)
+E:187,40: Instance of 'APIMethod' has no 'contributors_enabled' member (no-member)
+E:188,40: Instance of 'APIMethod' has no 'default_profile' member (no-member)
+E:189,40: Instance of 'APIMethod' has no 'default_profile_image' member (no-member)
+E:190,40: Instance of 'APIMethod' has no 'entities' member (no-member)
+E:191,40: Instance of 'APIMethod' has no 'following' member (no-member)
+E:192,40: Instance of 'APIMethod' has no 'favourites_count' member (no-member)
+E:193,40: Instance of 'APIMethod' has no 'geo_enabled' member (no-member)
+E:194,40: Instance of 'APIMethod' has no 'has_extended_profile' member (no-member)
+E:195,40: Instance of 'APIMethod' has no 'id' member (no-member)
+E:196,40: Instance of 'APIMethod' has no 'id_str' member (no-member)
+E:197,40: Instance of 'APIMethod' has no 'notifications' member (no-member)
+E:198,40: Instance of 'APIMethod' has no 'profile_background_color' member (no-member)
+E:199,40: Instance of 'APIMethod' has no 'profile_background_image_url' member (no-member)
+E:200,40: Instance of 'APIMethod' has no 'profile_background_image_url_https' member (no-member)
+E:201,40: Instance of 'APIMethod' has no 'profile_background_tile' member (no-member)
+E:202,40: Instance of 'APIMethod' has no 'profile_banner_url' member (no-member)
+E:203,40: Instance of 'APIMethod' has no 'profile_image_url' member (no-member)
+E:204,40: Instance of 'APIMethod' has no 'profile_image_url_https' member (no-member)
+E:205,40: Instance of 'APIMethod' has no 'profile_link_color' member (no-member)
+E:206,40: Instance of 'APIMethod' has no 'profile_location' member (no-member)
+E:207,40: Instance of 'APIMethod' has no 'profile_sidebar_border_color' member (no-member)
+E:208,40: Instance of 'APIMethod' has no 'profile_sidebar_fill_color' member (no-member)
+E:209,40: Instance of 'APIMethod' has no 'profile_text_color' member (no-member)
+E:210,40: Instance of 'APIMethod' has no 'profile_use_background_image' member (no-member)
+E:211,40: Instance of 'APIMethod' has no 'protected' member (no-member)
+E:212,40: Instance of 'APIMethod' has no 'suspended' member (no-member)
+E:213,40: Instance of 'APIMethod' has no 'translator_type' member (no-member)
+E:214,40: Instance of 'APIMethod' has no 'url' member (no-member)
+E:215,40: Instance of 'APIMethod' has no 'utc_offset' member (no-member)
+E:216,40: Instance of 'APIMethod' has no 'needs_phone_verification' member (no-member)
+E:217,40: Instance of 'APIMethod' has no 'verified' member (no-member)
+E:228,25: Instance of 'APIMethod' has no 'status' member (no-member)
+E:229,25: Instance of 'APIMethod' has no 'status' member (no-member)
+E:230,25: Instance of 'APIMethod' has no 'status' member (no-member)
+E:231,25: Instance of 'APIMethod' has no 'status' member (no-member)
+E:232,25: Instance of 'APIMethod' has no 'status' member (no-member)
+E:233,25: Instance of 'APIMethod' has no 'status' member (no-member)
+E:234,25: Instance of 'APIMethod' has no 'status' member (no-member)
+E:235,25: Instance of 'APIMethod' has no 'status' member (no-member)
+E:247,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:248,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:249,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:250,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:252,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:254,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:255,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:256,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:257,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:258,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:259,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:260,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:261,36: Instance of 'APIMethod' has no 'status' member (no-member)
+E:262,36: Instance of 'APIMethod' has no 'status' member (no-member)
+C:345, 0: Invalid constant name "ans" (invalid-name)
+C:347, 4: Invalid constant name "ans" (invalid-name)
 
 
 Report
 ======
-264 statements analysed.
+282 statements analysed.
 
 Statistics by type
 ------------------
@@ -104,7 +108,7 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |method   |0      |0          |=          |0           |0        |
 +---------+-------+-----------+-----------+------------+---------+
-|function |10     |10         |=          |100.00      |0.00     |
+|function |11     |11         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 
 
@@ -123,13 +127,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |268    |77.01 |NC       |NC         |
+|code      |287    |73.03 |NC       |NC         |
 +----------+-------+------+---------+-----------+
-|docstring |48     |13.79 |NC       |NC         |
+|docstring |61     |15.52 |NC       |NC         |
 +----------+-------+------+---------+-----------+
-|comment   |5      |1.44  |NC       |NC         |
+|comment   |6      |1.53  |NC       |NC         |
 +----------+-------+------+---------+-----------+
-|empty     |27     |7.76  |NC       |NC         |
+|empty     |39     |9.92  |NC       |NC         |
 +----------+-------+------+---------+-----------+
 
 
@@ -153,11 +157,11 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |23     |23       |=          |
+|convention |24     |24       |=          |
 +-----------+-------+---------+-----------+
 |refactor   |0      |0        |=          |
 +-----------+-------+---------+-----------+
-|warning    |0      |0        |=          |
+|warning    |3      |3        |=          |
 +-----------+-------+---------+-----------+
 |error      |64     |64       |=          |
 +-----------+-------+---------+-----------+
@@ -167,17 +171,21 @@ Messages by category
 Messages
 --------
 
-+-------------+------------+
-|message id   |occurrences |
-+=============+============+
-|no-member    |64          |
-+-------------+------------+
-|invalid-name |23          |
-+-------------+------------+
++--------------------------+------------+
+|message id                |occurrences |
++==========================+============+
+|no-member                 |64          |
++--------------------------+------------+
+|invalid-name              |24          |
++--------------------------+------------+
+|unused-variable           |2           |
++--------------------------+------------+
+|global-variable-undefined |1           |
++--------------------------+------------+
 
 
 
 Global evaluation
 -----------------
-Your code has been rated at -2.99/10
+Your code has been rated at -2.30/10
 
