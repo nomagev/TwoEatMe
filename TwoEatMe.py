@@ -9,7 +9,7 @@ __maintainer__ = "nomagev"
 __credits__ = []
 __license__ = "GPL 2.0"
 __email__ = ""
-__status__ = "Production"
+__status__ = "Testing"
 
 import pickle
 import sys
