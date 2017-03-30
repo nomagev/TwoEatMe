@@ -1,0 +1,6 @@
+language: python
+# command to install dependencies
+install:
+  - pip install tweepy
+# command to run tests
+script: TwoEatMe.py

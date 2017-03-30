@@ -32,7 +32,7 @@ The program is hosted under the [master folder](https://github.com/nomagev/twoea
 
 You can run it on your terminal (do not forget to check the "Dependencies" on the section above) or your Command Prompt by copying your file on your local drive and, on the same folder, run 'python TwoEatMe.py'.
 
-# Current Status (as of March 26th 2017)
+# Current Status (as of March 29th 2017)
 
 Current program is able to:
 1. **Tweepy Library Check:** Program checks whether Tweepy Library is installed on your system.
@@ -51,9 +51,6 @@ Current program is able to:
   - **Your last Tweet's Additional Information:** Display additional details on your last published Tweet you may not be aware of.
   - **The last 10 Tweets you received:** Display the last 10 Public tweets you may have received on your Twitter Timeline.
   - **The last 10 Tweets you sent:** Display the last 10 Public tweets you may have sent on Twitter.
-
-  Latest functionalities added (v2.0)
-
   - **Send Tweets:** You are now able to send tweets from your Twitter Account (using your own [Twitter Apps Credentials](https://apps.twitter.com).
   - **Check Global Trends:** Display Twitter Global Trending Topics.
 
