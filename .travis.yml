@@ -3,4 +3,4 @@ language: python
 install:
   - pip install tweepy
 # command to run tests
-script: TwoEatMe.py
+script: Python TwoEatMe.py
