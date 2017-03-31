@@ -57,3 +57,24 @@ Current program is able to:
 5. **Program Options Menu**: the program displays a couple of internal options you can trigger, including: 
   - **Clear the Screen:** The option will clear the text already displayed in the screen.
   - **Quit the Application:** The option will instruction the program to succesfully quit and go back to the command prompt on your shell.
+
+# Road map
+
+__[master branch](https://github.com/nomagev/TwoEatMe)__
+
+- [x] Dependencies checks (tweepy library, chcp, API keys)
+- [x] Display Menu with options:
+  - [x] Send a Tweet.
+  - [x] Display Twitter Global Trends
+  - [x] Display Basic / Advanced Details on the last Tweet you sent.
+  - [x] Display last 10 Tweets you Received / Sent
+  - [x] Display Basic / Advanced Details on you at Twitter.
+  - [x] Clear Screen / Quit the Program
+
+__[next-release branch](https://github.com/nomagev/TwoEatMe/tree/next-release)__
+
+- [ ] Review and Improve Code Quality
+
+__Future: [See Issues Page](https://github.com/nomagev/TwoEatMe/issues)__
+
+- [ ] Enter **YOUR** idea or request in there.
