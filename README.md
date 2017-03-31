@@ -77,4 +77,4 @@ __[next-release branch](https://github.com/nomagev/TwoEatMe/tree/next-release)__
 
 __Future: [See Issues Page](https://github.com/nomagev/TwoEatMe/issues)__
 
-- [ ] Enter **YOUR** idea or request in there.
+- [ ] Enter **YOUR** idea or request in [the issues area](https://github.com/nomagev/TwoEatMe/issues).
