@@ -5,8 +5,8 @@ through  Python's   Tweepy  library  and
 Twitter Apps Credentials.
 '''
 
-__version__ = '2.0.2'
-__author__ = 'nomagev'
+__version__ = "2.0.2"
+__author__ = "nomagev"
 __maintainer__ = "nomagev"
 __license__ = "GPL 2.0"
 __email__ = "vegamontesino@msn.com"
