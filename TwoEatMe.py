@@ -161,7 +161,7 @@ def about_me():
     Triggers a  basic  reading on  the  main
     attributes from the logging user.
     '''
-
+    print "Here are your Basic Twitter Details"
     print "----------------------- USER -------------------------"
     print "|   User Name:", api.me().name.encode("utf-8")
     print "| Account (@):", api.me().screen_name.encode("utf-8")
@@ -346,48 +346,32 @@ menu_description()
 ans = True
 while ans:
     ans = raw_input("What would you like to do? ")
-    if ans == 'ST' or ans == 'st':
-        print ""
+    print ""
+
+    if ans.lower() == 'st':        
         send_a_tweet()
-        menu_description()
-    elif ans == 'TT' or ans == 'tt':
-        print ""
+    elif ans.lower() == 'tt':
         trends()
-        menu_description()
-    elif ans == 'T' or ans == 't':
-        print ""
+    elif ans.lower() == 't':
         current_tweet()
-        menu_description()
-    elif ans == 'T+' or ans == 't+':
-        print ""
+    elif ans.lower() == 't+':
         current_tweet_extended()
-        menu_description()
-    elif ans == 'R' or ans == 'r':
-        print ""
+    elif ans.lower() == 'r':
         last_10_tweets_received()
-        menu_description()
-    elif ans == 'S' or ans == 's':
-        print ""
+    elif ans.lower() == 's':
         last_10_tweets_sent()
-        menu_description()
-    elif ans == 'U' or ans == 'u':
-        print "Here are your Basic Twitter Details"
+    elif ans.lower() == 'u':
         about_me()
-        menu_description()
-    elif ans == 'U+' or ans == 'u+':
-        print ""
+    elif ans.lower() == 'u+':
         about_me_extended()
-        menu_description()
-    elif ans == 'Q' or ans == 'q':
-        print ""
+    elif ans.lower() == 'q':
         chcp_reset()
         sys.exit("See you soon!")
-    elif ans == 'C' or ans == 'c':
+    elif ans.lower() == 'c':
         clear()
-        menu_description()
     else:
-        print ""
         print "Wrong instruction: please try again"
-        menu_description()
+
+    menu_description()
 
 # End of Program
